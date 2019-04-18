@@ -1,4 +1,25 @@
 #!/usr/bin/env bash
+# Author: Farman Ulhaq
+# Date:   4/18/2019
+# Description: This script installs all necessary software I need to Linux
+    #Step: Install Git
+    #Step: Install VIM
+    #Step: Install The Ultimate vimrc
+    #Step: Install Fish Shell
+    #Step: Install GCloud
+    #Step: Install Kubectl
+    #Step: Kubectl Autocomplete & Alias - Fish Shell
+    #Step: Install Kubectx and kubens
+    #Step: Kubectx and Kubens Autocomplete & Alias - Fish Shell
+    #Step: Install Helm
+    #Step: Install Fisher
+    #Step: Install z
+    #Step: Install jq
+    #Step: Install popeye
+
+
+
+
 # Helper Functions
 : ${USE_SUDO:="true"}
 runAsRoot() {
@@ -42,14 +63,14 @@ echo 'Installing GCloud'
 export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
 echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
-runAsRoot apt-get update -y 
+runAsRoot apt-get update -y
 runAsRoot apt-get install google-cloud-sdk -y
 
 
 
 #Step: Install Kubectl
 #Site: https://kubernetes.io/docs/tasks/tools/install-kubectl/
-#Site: 
+#Site:
 echo 'Installing Kubectl'
 runAsRoot apt-get update && apt-get install -y apt-transport-https
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
@@ -65,7 +86,7 @@ git clone https://github.com/evanlucas/fish-kubectl-completions ~/.config/fish/f
 ln -s ~/.config/fish/fish-kubectl-completions/completions/kubectl.fish ~/.config/fish/completions/
 ln -s ~/.config/fish/fish-kubectl-completions/completions/kubectl.fish ~/.config/fish/completions/k.fish  #**** handles  completion for the 'k' alias
 fish -c "alias k=kubectl; funcsave k"
-        
+
 
 #Step: Install Kubectx and kubens
 #Site: https://github.com/ahmetb/kubectx
@@ -80,7 +101,7 @@ echo 'Kubectx and Kubens Autocomplete & Alias - Fish Shell'
 mkdir -p ~/.config/fish/completions
 ln -s /opt/kubectx/completion/kubectx.fish ~/.config/fish/completions/
 ln -s /opt/kubectx/completion/kubens.fish ~/.config/fish/completions/
-cp /opt/kubectx/completion/kubens.fish /opt/kubectx/completion/kn.fish 
+cp /opt/kubectx/completion/kubens.fish /opt/kubectx/completion/kn.fish
 ln -s /opt/kubectx/completion/kn.fish ~/.config/fish/completions/kn.fish
 ln -s /opt/kubectx/completion/kubectx.fish ~/.config/fish/completions/kc.fish
 fish -c "alias kc=kubectx; funcsave kc"
