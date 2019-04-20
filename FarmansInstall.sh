@@ -16,6 +16,7 @@
     #Step: Install z
     #Step: Install jq
     #Step: Install popeye
+    #Step: Install npm
 
 
 
@@ -142,21 +143,25 @@ runAsRoot tar -xf /tmp/popeye.tar.gz -C /opt/popeye
 runAsRoot ln -s /opt/popeye/popeye /usr/local/bin/popeye
 
 # COOL UTILITIES
-#Install pbcopy and pbpaste
+#Step: Install pbcopy and pbpaste
 echo 'Installing pbcopy and pbpaste'
 runAsRoot apt install xclip xsel
 fish -c "alias pbcopy='xclip -selection clipboard'; funcsave pbcopy"
 fish -c "alias pbpaste='xclip -selection clipboard -o'; funcsave pbpaste"
 
 
-#Install Parcellite
+#Step: Install Parcellite
 echo 'Installing Parcellite'
 apt-get install parcellite -y
 
-#Installl Remmina for RDP
+#Step: Installl Remmina for RDP
 echo 'Installing Remmina for RDP'
 runAsRoot apt-add-repository ppa:remmina-ppa-team/remmina-next -y
 runAsRoot apt-get update -y
 runAsRoot apt-get install -y remmina remmina-plugin-rdp remmina-plugin-secret remmina-plugin-spice
 runAsRoot killall remmina
+
+#Step: Install npm
+echo 'Installing npm'
+runAsRoot apt-get install npm -y
 
