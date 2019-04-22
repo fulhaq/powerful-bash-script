@@ -18,7 +18,8 @@
     #**: Install jq
     #**: Install popeye
     #**: Install pbcopy and pbpaste
-    #**: Install Parcellite
+    #**: Install Parcellite - clipboard manager
+    #**: Install Shutter - Screen capturing
     #**: Installl Remmina for RDP
     #**: Install npm
 
@@ -164,6 +165,10 @@ fish -c "alias pbpaste='xclip -selection clipboard -o'; funcsave pbpaste"
 #Step: Install Parcellite
 echo 'Installing Parcellite'
 apt-get install parcellite -y
+
+#Step: Install Shutter
+echo 'Installing Shutter'
+runAsRoot apt-get install shutter -y
 
 #Step: Installl Remmina for RDP
 echo 'Installing Remmina for RDP'
