@@ -24,7 +24,7 @@
     #**: Install Shutter - Screen capturing
     #**: Installl Remmina for RDP
     #**: Install npm
-
+#NOTE: For Laptops, install this tool to get brightness working: https://github.com/Redsandro/thinkpad-x1-yoga
 
 
 
