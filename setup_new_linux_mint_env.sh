@@ -4,7 +4,9 @@
 # Description: This script installs all necessary software I need to Linux
     #**: Install Git
     #**: Configure Common Git Aliases
+    #**: Install ranger - a vim inspired file manager
     #**: Install VIM
+    #**: Install dotnet core 2.2
     #**: Install The Ultimate vimrc
     #**: Install Fish Shell
     #**: Install GCloud
@@ -52,6 +54,21 @@ echo 'Configuring common Git Aliases'
 git config --global alias.co checkout
 git config --global alias.st status
 git config --global alias.cob checkout -b
+
+#Step: Install ranger - a vim inspired file manager
+#Site: https://github.com/ranger/ranger
+runAsRoot apt-get install ranger -y
+
+#Step: Install dotnet core 2.2
+#Site: https://dotnet.microsoft.com/download/linux-package-manager/ubuntu18-10/sdk-current
+echo 'Installing dotnet core 2.2'
+wget -q https://packages.microsoft.com/config/ubuntu/18.10/packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
+sudo apt-get install apt-transport-https
+sudo apt-get update
+sudo apt-get install dotnet-sdk-2.2
+
+
 
 #Step: Install VIM
 #Ref:  https://www.vim.org/download.php
