@@ -92,7 +92,12 @@ runAsRoot chsh -s /usr/bin/fish
 #Ref: https://github.com/oh-my-fish
 curl -L https://get.oh-my.fish | fish
 omf install weather
-omf install taktoa
+
+#Step: Default to bobthefish terminal theme
+#Ref: https://github.com/oh-my-fish/theme-bobthefish
+omf install bobthefish
+set -g theme_powerline_fonts no
+# also recommended: -omf install taktoa
 
 
 #Step: Install GCloud
