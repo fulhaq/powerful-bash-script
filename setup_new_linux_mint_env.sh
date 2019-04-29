@@ -89,7 +89,10 @@ runAsRoot chsh -s /usr/bin/fish
 
 #Step: Install Oh My Fish - Fish Shell Customizer
 #Ref: https://www.ostechnix.com/oh-fish-make-shell-beautiful/
+#Ref: https://github.com/oh-my-fish
 curl -L https://get.oh-my.fish | fish
+omf install weather
+omf install taktoa
 
 
 #Step: Install GCloud
