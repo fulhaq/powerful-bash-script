@@ -87,6 +87,11 @@ echo 'Installing Fish'
 runAsRoot apt-get install fish -y
 runAsRoot chsh -s /usr/bin/fish
 
+#Step: Install Oh My Fish - Fish Shell Customizer
+#Ref: https://www.ostechnix.com/oh-fish-make-shell-beautiful/
+curl -L https://get.oh-my.fish | fish
+
+
 #Step: Install GCloud
 #Ref:  https://cloud.google.com/sdk/install
 echo 'Installing GCloud'
