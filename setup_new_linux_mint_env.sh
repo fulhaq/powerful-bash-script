@@ -100,6 +100,7 @@ runAsRoot apt-get install fonts-powerline -y
 #Step: Default to bobthefish terminal theme
 #Ref: https://github.com/oh-my-fish/theme-bobthefish
 omf install bobthefish
+set -g theme_powerline_fonts no
 # also recommended: -omf install taktoa
 
 
