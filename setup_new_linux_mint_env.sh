@@ -59,6 +59,16 @@ git config --global alias.cob checkout -b
 #Site: https://github.com/ranger/ranger
 runAsRoot apt-get install ranger -y
 
+#Step: Install Terminator - terminal
+#Ref: https://terminator-gtk3.readthedocs.io/en/latest/gettingstarted.html
+runAsRoot apt-get install terminator -y
+#Change default terminal
+gsettings set org.gnome.desktop.default-applications.terminal exec /usr/bin/terminator
+gsettings set org.gnome.desktop.default-applications.terminal exec-arg "-x"
+gsettings set org.cinnamon.desktop.default-applications.terminal exec /usr/bin/terminator
+
+
+
 #Step: Install dotnet core 2.2
 #Site: https://dotnet.microsoft.com/download/linux-package-manager/ubuntu18-10/sdk-current
 echo 'Installing dotnet core 2.2'
