@@ -96,12 +96,16 @@ sh ~/.vim_runtime/install_awesome_vimrc.sh
 echo 'Installing Fish'
 runAsRoot apt-get install fish -y
 runAsRoot chsh -s /usr/bin/fish
+fish
 
 #Step: Install Oh My Fish - Fish Shell Customizer
 #Ref: https://www.ostechnix.com/oh-fish-make-shell-beautiful/
 #Ref: https://github.com/oh-my-fish
 curl -L https://get.oh-my.fish | fish
 omf install weather
+# Add alias for outside temprature
+alias outside="weather new york"
+savefunc outside
 #Step: Install Powerline Fonts
 #Ref: https://github.com/powerline/fonts
 runAsRoot apt-get install fonts-powerline -y
