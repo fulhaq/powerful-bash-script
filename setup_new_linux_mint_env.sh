@@ -91,6 +91,29 @@ echo 'Installing The Ultimate vimrc'
 git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
 sh ~/.vim_runtime/install_awesome_vimrc.sh
 
+#Step: Install GCloud
+#Ref:  https://cloud.google.com/sdk/install
+echo 'Installing GCloud'
+export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
+echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+runAsRoot apt-get update -y
+runAsRoot apt-get install google-cloud-sdk -y
+
+
+
+#Step: Install Kubectl
+#Ref:  https://kubernetes.io/docs/tasks/tools/install-kubectl/
+#Ref:
+echo 'Installing Kubectl'
+runAsRoot apt-get update
+runAsRoot apt-get install -y apt-transport-https
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+runAsRoot apt-get update
+runAsRoot apt-get install -y kubectl
+
+
 #Step: Install Fish Shell
 #Ref:  https://fishshell.com/
 echo 'Installing Fish'
@@ -116,29 +139,6 @@ runAsRoot apt-get install fonts-powerline -y
 omf install bobthefish
 set -g theme_powerline_fonts no
 # also recommended: -omf install taktoa
-
-
-#Step: Install GCloud
-#Ref:  https://cloud.google.com/sdk/install
-echo 'Installing GCloud'
-export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
-echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
-curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
-runAsRoot apt-get update -y
-runAsRoot apt-get install google-cloud-sdk -y
-
-
-
-#Step: Install Kubectl
-#Ref:  https://kubernetes.io/docs/tasks/tools/install-kubectl/
-#Ref:
-echo 'Installing Kubectl'
-runAsRoot apt-get update
-runAsRoot apt-get install -y apt-transport-https
-curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
-runAsRoot apt-get update
-runAsRoot apt-get install -y kubectl
 
 #Step: Kubectl Autocomplete & Alias - Fish Shell
 #Ref:  https://github.com/evanlucas/fish-kubectl-completions
