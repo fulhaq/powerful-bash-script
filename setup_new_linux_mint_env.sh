@@ -59,6 +59,16 @@ git config --global alias.cob checkout -b
 #Site: https://github.com/ranger/ranger
 runAsRoot apt-get install ranger -y
 
+#Step: Install Terminator - terminal
+#Ref: https://terminator-gtk3.readthedocs.io/en/latest/gettingstarted.html
+runAsRoot apt-get install terminator -y
+#Change default terminal
+gsettings set org.gnome.desktop.default-applications.terminal exec /usr/bin/terminator
+gsettings set org.gnome.desktop.default-applications.terminal exec-arg "-x"
+gsettings set org.cinnamon.desktop.default-applications.terminal exec /usr/bin/terminator
+
+
+
 #Step: Install dotnet core 2.2
 #Site: https://dotnet.microsoft.com/download/linux-package-manager/ubuntu18-10/sdk-current
 echo 'Installing dotnet core 2.2'
@@ -66,7 +76,7 @@ wget -q https://packages.microsoft.com/config/ubuntu/18.10/packages-microsoft-pr
 sudo dpkg -i packages-microsoft-prod.deb
 sudo apt-get install apt-transport-https
 sudo apt-get update
-sudo apt-get install dotnet-sdk-2.2
+sudo apt-get install -y dotnet-sdk-2.2
 
 
 
@@ -86,12 +96,16 @@ sh ~/.vim_runtime/install_awesome_vimrc.sh
 echo 'Installing Fish'
 runAsRoot apt-get install fish -y
 runAsRoot chsh -s /usr/bin/fish
+fish
 
 #Step: Install Oh My Fish - Fish Shell Customizer
 #Ref: https://www.ostechnix.com/oh-fish-make-shell-beautiful/
 #Ref: https://github.com/oh-my-fish
 curl -L https://get.oh-my.fish | fish
 omf install weather
+# Add alias for outside temprature
+alias outside="weather new york"
+savefunc outside
 #Step: Install Powerline Fonts
 #Ref: https://github.com/powerline/fonts
 runAsRoot apt-get install fonts-powerline -y
