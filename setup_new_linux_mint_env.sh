@@ -43,7 +43,13 @@ runAsRoot() {
 RED='\033[0,31m'
 NC='\033[0m' # No Color
 
-#Step: Install Git
+##Step: Install Fish Shell
+#Ref:  https://fishshell.com/
+echo 'Installing Fish'
+runAsRoot apt-get install fish -y
+runAsRoot chsh -s /usr/bin/fish
+
+Step: Install Git
 #Ref:  https://git-scm.com/downloads
 echo "Installing Git"
 runAsRoot apt-get install git -y
@@ -186,21 +192,14 @@ echo 'Installing npm'
 runAsRoot apt-get install npm -y
 
 ############# FISH SHELL RELATED STUFF ######################
-#Step: Install Fish Shell
-#Ref:  https://fishshell.com/
-echo 'Installing Fish'
-runAsRoot apt-get install fish -y
-runAsRoot chsh -s /usr/bin/fish
-fish
-
 #Step: Install Oh My Fish - Fish Shell Customizer
 #Ref: https://www.ostechnix.com/oh-fish-make-shell-beautiful/
 #Ref: https://github.com/oh-my-fish
-curl -L https://get.oh-my.fish | fish
-omf install weather
+fish -c "(curl -L https://get.oh-my.fish)"
+fish -c "omf install weather"
 # Add alias for outside temprature
 alias outside="weather new york"
-savefunc outside
+funcsave outside
 #Step: Install Powerline Fonts
 #Ref: https://github.com/powerline/fonts
 runAsRoot apt-get install fonts-powerline -y
