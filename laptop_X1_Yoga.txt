@@ -1,0 +1,4 @@
+ # For X1 Yoga Laptops on Linux Mint/Ubuntu
+  ## Brightness Controls:  https://github.com/Redsandro/thinkpad-x1-yoga
+  ## Closing the Lid: https://itsfoss.com/ubuntu-close-lid-suspend/
+

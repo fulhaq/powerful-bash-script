@@ -174,7 +174,7 @@ fish -c "alias pbpaste='xclip -selection clipboard -o'; funcsave pbpaste"
 
 #Step: Install Parcellite
 echo 'Installing Parcellite'
-apt-get install parcellite -y
+runAsRoot apt-get install parcellite -y
 
 #Step: Install Shutter
 echo 'Installing Shutter'
