@@ -83,6 +83,9 @@ sudo dpkg -i packages-microsoft-prod.deb
 sudo apt-get install apt-transport-https
 sudo apt-get update
 sudo apt-get install -y dotnet-sdk-2.2
+sudo dpkg --purge packages-microsoft-prod && sudo dpkg -i packages-microsoft-prod.deb
+sudo apt-get update
+sudo apt-get install -y dotnet-sdk-2.2
 
 
 
