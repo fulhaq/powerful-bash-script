@@ -223,6 +223,7 @@ git clone https://github.com/evanlucas/fish-kubectl-completions ~/.config/fish/f
 ln -s ~/.config/fish/fish-kubectl-completions/completions/kubectl.fish ~/.config/fish/completions/
 ln -s ~/.config/fish/fish-kubectl-completions/completions/kubectl.fish ~/.config/fish/completions/k.fish  #**** handles  completion for the 'k' alias
 fish -c "alias k=kubectl; funcsave k"
+fish -c "alias kk='kubectl get pods'; funcsave kk"
 
 #Step: Install Fisher
 #Ref:  https://github.com/jorgebucaran/fisher
