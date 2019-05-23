@@ -24,7 +24,7 @@
     #**: Install Shutter - Screen capturing
     #**: Installl Remmina for RDP
     #**: Install npm
-    
+
 #NOTE: For Laptops, install this tool to get brightness working: https://github.com/Redsandro/thinkpad-x1-yoga
 
 
@@ -63,7 +63,7 @@ git config --global alias.st status
 git config --global alias.cob checkout -b
 
 #Step: Install ranger - a vim inspired file manager
-#Site: https://github.com/ranger/ranger
+#Ref: https://github.com/ranger/ranger
 runAsRoot apt-get install ranger -y
 
 #Step: Install Terminator - terminal
@@ -74,10 +74,14 @@ gsettings set org.gnome.desktop.default-applications.terminal exec /usr/bin/term
 gsettings set org.gnome.desktop.default-applications.terminal exec-arg "-x"
 gsettings set org.cinnamon.desktop.default-applications.terminal exec /usr/bin/terminator
 
-
+#Step: Install docker.io
+#Ref:
+runAsRoot apt-get install docker.io -y
+runAsRoot groupadd docker
+runAsRoot usermod -ag docker $USER
 
 #Step: Install dotnet core 2.2
-#Site: https://dotnet.microsoft.com/download/linux-package-manager/ubuntu18-10/sdk-current
+Site: https://dotnet.microsoft.com/download/linux-package-manager/ubuntu18-10/sdk-current
 echo 'Installing dotnet core 2.2'
 wget -q https://packages.microsoft.com/config/ubuntu/18.10/packages-microsoft-prod.deb
 sudo dpkg -i packages-microsoft-prod.deb
@@ -240,6 +244,6 @@ fish -c "fisher add jethrokuan/z"
 #Ref: https://www.dropbox.com/install-linux
 echo 'Installing dropbox'
 mkdir ~/temp
-cd ~/temp 
+cd ~/temp
 wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
 ~/temp/.dropbox-dist/dropboxd
