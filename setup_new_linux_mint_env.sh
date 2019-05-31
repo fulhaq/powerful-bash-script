@@ -78,7 +78,7 @@ gsettings set org.cinnamon.desktop.default-applications.terminal exec /usr/bin/t
 #Ref:
 runAsRoot apt-get install docker.io -y
 runAsRoot groupadd docker
-runAsRoot usermod -ag docker $USER
+runAsRoot usermod -aG docker $USER
 
 #Step: Install dotnet core 2.2
 Site: https://dotnet.microsoft.com/download/linux-package-manager/ubuntu18-10/sdk-current
