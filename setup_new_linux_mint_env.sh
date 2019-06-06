@@ -161,6 +161,32 @@ runAsRoot rm /tmp/get_helm.sh
 echo 'Installing jq - json parsing'
 runAsRoot apt-get install jq -y
 
+
+#Step: Install fluxctl
+#Ref: https://www.weave.works/blog/install-fluxctl-and-manage-your-deployments-easily
+echo 'Installing fluxctl'
+releaseURL='https://github.com/weaveworks/flux/releases/download/RELEASENAME/fluxctl_linux_amd64'
+release=$(curl -s https://api.github.com/repos/weaveworks/flux/releases | jq -r '.[0].tag_name')
+newURL="${releaseURL//RELEASENAME/$release}"
+wget $newURL -O /tmp/fluxctl
+runAsRoot mkdir /opt/flux
+runAsRoot cp /tmp/fluxctl /opt/flux
+runAsRoot ln -s /opt/flux/fluxctl /usr/local/bin/fluxctl
+
+
+#Step: Install fluxctl
+#Ref: https://www.weave.works/blog/install-fluxctl-and-manage-your-deployments-easily
+echo 'Installing fluxctl'
+releaseURL='https://github.com/weaveworks/flux/releases/download/RELEASENAME/fluxctl_linux_amd64'
+release=$(curl -s https://api.github.com/repos//weaveworks/flux/releases | jq -r '.[0].tag_name' | awk '{print substr($1,2); }')
+newURL="${releaseURL//RELEASENAME/$release}"
+wget $newURL -O /tmp/fluxctl
+runAsRoot mkdir /opt/flux
+runAsRoot cp /tmp/fluxctl /opt/flux
+runAsRoot ln -s /opt/flux/fluxctl /usr/local/bin/fluxctl
+
+
+
 #Step: Install popeye
 #Ref:  https://github.com/derailed/popeye
 echo 'Installing popeye'
