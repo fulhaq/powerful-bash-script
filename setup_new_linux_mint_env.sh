@@ -136,6 +136,17 @@ runAsRoot git clone https://github.com/ahmetb/kubectx /opt/kubectx
 runAsRoot ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx
 runAsRoot ln -s /opt/kubectx/kubens /usr/local/bin/kubens
 
+#Step: Install Kubebox
+#Ref: https://github.com/astefanutti/kubebox
+echo 'Installing Kubebox'
+releaseURL='https://github.com/astefanutti/kubebox/releases/download/vRELEASENAME/kubebox-linux'
+release=$(curl -s https://api.github.com/repos/astefanutti/kubebox/releases | jq -r '.[0].tag_name' | awk '{print substr($1,2);   }')
+newURL="${releaseURL//RELEASENAME/$release}"
+runAsRoot curl -Lo /opt/kubebox https://github.com/astefanutti/kubebox/releases/download/v0.6.0/kubebox-linux
+runAsRoot chmod +x /opt/kubebox
+runAsRoot ln -s /opt/kubebox /usr/local/bin/kubebox
+
+
 #Step: Kubectx and Kubens Autocomplete & Alias - Fish Shell
 #Ref:  https://github.com/ahmetb/kubectx/tree/master/completion
 echo 'Kubectx and Kubens Autocomplete & Alias - Fish Shell'
