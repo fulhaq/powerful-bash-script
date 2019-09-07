@@ -50,10 +50,16 @@ echo 'Installing Fish'
 runAsRoot apt-get install fish -y
 runAsRoot chsh -s /usr/bin/fish
 
-Step: Install Git
+#Step: Install Git
 #Ref:  https://git-scm.com/downloads
 echo "Installing Git"
 runAsRoot apt-get install git -y
+
+#Step: Install plank
+#Ref:
+echo "Installing plank"
+runAsRoot apt-get install plank -y
+cp plankStartup.sh ~/.config/autostart/
 
 #Step: Configure Common Git Aliases
 #Ref:  https://haacked.com/archive/2014/07/28/github-flow-aliases/

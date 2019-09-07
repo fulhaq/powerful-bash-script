@@ -13,3 +13,5 @@ https://github.com/linuxmint/Cinnamon/wiki/Backing-up-and-restoring-your-cinnamo
 eval (ssh-agent -c); ssh-add -k
 
 Ref: https://www.rockyourcode.com/ssh-agent-could-not-open-a-connection-to-your-authentication-agent-with-fish-shell
+
+## Move Taskmanager to the top of the window so that plunk can appear on the bottom
