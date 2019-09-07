@@ -59,7 +59,7 @@ runAsRoot apt-get install git -y
 #Ref:
 echo "Installing plank"
 runAsRoot apt-get install plank -y
-cp plankStartup.sh ~/.config/autostart/
+cp plank.desktop ~/.config/autostart/
 
 #Step: Configure Common Git Aliases
 #Ref:  https://haacked.com/archive/2014/07/28/github-flow-aliases/

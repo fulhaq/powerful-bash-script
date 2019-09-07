@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=plank Applet
+Comment=Startup plank in startup
+Icon=org.remmina.Remmina
+Exec=plank
+Terminal=false
+Type=Application
+Hidden=false
