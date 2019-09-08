@@ -56,7 +56,8 @@ echo "Installing Git"
 runAsRoot apt-get install git -y
 
 #Step: Install plank
-#Ref:
+#Ref: https://www.reddit.com/r/linuxmint/comments/czfuyy/former_windowsuser_switched_to_linux_mint_never/
+#Ref: https://www.gnome-look.org/p/1275087/
 echo "Installing plank"
 runAsRoot apt-get install plank -y
 cp plank.desktop ~/.config/autostart/
