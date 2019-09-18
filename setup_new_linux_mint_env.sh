@@ -229,7 +229,7 @@ runAsRoot apt-get install npm -y
 #Step: Install Oh My Fish - Fish Shell Customizer
 #Ref: https://www.ostechnix.com/oh-fish-make-shell-beautiful/
 #Ref: https://github.com/oh-my-fish
-fish -c "(curl -L https://get.oh-my.fish)"
+curl -L https://get.oh-my.fish | fish
 fish -c "omf install weather"
 # Add alias for outside temprature
 alias outside="weather new york"
