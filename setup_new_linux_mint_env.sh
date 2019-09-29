@@ -265,11 +265,3 @@ curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fi
 echo 'Installing z - Directory Jumping'
 fish -c "fisher add jethrokuan/z"
 
-
-#Step: Install Dropbox
-#Ref: https://www.dropbox.com/install-linux
-echo 'Installing dropbox'
-mkdir ~/temp
-cd ~/temp
-wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
-~/temp/.dropbox-dist/dropboxd
