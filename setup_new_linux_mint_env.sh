@@ -2,29 +2,38 @@
 # Author: Farman Ulhaq
 # Date:   4/18/2019
 # Description: This script installs all necessary software I need to Linux
-    #**: Install Git
-    #**: Configure Common Git Aliases
-    #**: Install ranger - a vim inspired file manager
-    #**: Install VIM
-    #**: Install dotnet core 2.2
-    #**: Install The Ultimate vimrc
-    #**: Install Fish Shell
-    #**: Install GCloud
-    #**: Install Kubectl
-    #**: Kubectl Autocomplete & Alias - Fish Shell
-    #**: Install Kubectx and kubens
-    #**: Kubectx and Kubens Autocomplete & Alias - Fish Shell
-    #**: Install Helm
-    #**: Install Fisher
-    #**: Install z
-    #**: Install jq
-    #**: Install popeye
-    #**: Install pbcopy and pbpaste
-    #**: Install Parcellite - clipboard manager
-    #**: Install Shutter - Screen capturing
-    #**: Installl Remmina for RDP
-    #**: Install npm
-
+    ##Step: Install Fish Shell
+    #Step: Install Git
+    #Step: Install plank
+    #Step: Configure Common Git Aliases
+    #Step: Install ranger - a vim inspired file manager
+    #Step: Install Terminator - terminal
+    #Step: Install docker.io
+    #Step: Install dotnet core 2.2
+    #Step: Install VIM
+    #Step: Install The Ultimate vimrc
+    #Step: Install vim athena
+    #Step: Install GCloud
+    #Step: Install Kubectl
+    #Step: Install Kubectx and kubens
+    #Step: Install Kubebox
+    #Step: Kubectx and Kubens Autocomplete & Alias - Fish Shell
+    #Step: Install Helm
+    #Step: Install jq
+    #Step: Install snap
+    #Step: Install fluxctl
+    #Step: Install popeye
+    #Step: Install pbcopy and pbpaste
+    #Step: Install Parcellite
+    #Step: Install Shutter
+    #Step: Installl Remmina for RDP
+    #Step: Install npm
+    #Step: Install Oh My Fish - Fish Shell Customizer
+    #Step: Install Powerline Fonts
+    #Step: Default to bobthefish terminal theme
+    #Step: Kubectl Autocomplete & Alias - Fish Shell
+    #Step: Install Fisher
+    #Step: Install z - Jump Around for Fish Shell
 #NOTE: For Laptops, install this tool to get brightness working: https://github.com/Redsandro/thinkpad-x1-yoga
 
 
@@ -111,6 +120,11 @@ runAsRoot apt-get install vim -y
 echo 'Installing The Ultimate vimrc'
 git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
 sh ~/.vim_runtime/install_awesome_vimrc.sh
+
+#Step: Install vim athena
+#Ref:  https://askubuntu.com/questions/60200/how-to-copy-data-between-different-instances-of-vim
+echo 'Installing vim-athena'
+runAsRoot apt-get install -y vim-athena
 
 #Step: Install GCloud
 #Ref:  https://cloud.google.com/sdk/install
