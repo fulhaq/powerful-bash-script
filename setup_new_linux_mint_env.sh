@@ -129,23 +129,18 @@ runAsRoot apt-get install -y vim-athena
 #Step: Install GCloud
 #Ref:  https://cloud.google.com/sdk/install
 echo 'Installing GCloud'
-export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
-echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
-curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+runAsRoot apt-get install apt-transport-https ca-certificates gnupg
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
 runAsRoot apt-get update -y
-runAsRoot apt-get install google-cloud-sdk -y
-
+runAsRoot apt-get install -y google-cloud-sdk
 
 
 #Step: Install Kubectl
 #Ref:  https://kubernetes.io/docs/tasks/tools/install-kubectl/
 #Ref:
+#NOTE: Give you've installed GCloud above, you can install kubectl with apt without any fancy script
 echo 'Installing Kubectl'
-runAsRoot apt-get update
-runAsRoot apt-get install -y apt-transport-https
-curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
-runAsRoot apt-get update
 runAsRoot apt-get install -y kubectl
 
 

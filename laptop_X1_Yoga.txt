@@ -1,4 +1,9 @@
  # For X1 Yoga Laptops on Linux Mint/Ubuntu
   ## Brightness Controls:  https://github.com/Redsandro/thinkpad-x1-yoga
   ## Closing the Lid: https://itsfoss.com/ubuntu-close-lid-suspend/
+git clone https://github.com/Redsandro/thinkpad-x1-yoga.git /tmp/thinkpad-x1-yoga
+sudo apt-add-repository ppa:ansible/ansible
+sudo apt update && sudo apt install ansible
+sudo env ANSIBLE_NOCOWS=1 ansible-playbook x1yoga.yml --skip-tags="packages,extras"
+
 
