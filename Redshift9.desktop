@@ -5,7 +5,7 @@ Version=1.0
 Name=Redshift
 GenericName=Color temperature adjustment
 Comment=Color temperature adjustment tool
-Exec=sh -c "killall redshift;redshift-gtk -b 0.8 -l geoclue2"
+Exec=sh -c "killall redshift;redshift-gtk -b 0.9 -l geoclue2"
 Icon=redshift
 Terminal=false
 Type=Application
@@ -14,4 +14,4 @@ StartupNotify=true
 Hidden=false
 X-GNOME-Autostart-enabled=true
 
-Name[en_US]=Redshift0.8
+Name[en_US]=Redshift0.9
