@@ -274,3 +274,7 @@ curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fi
 echo 'Installing z - Directory Jumping'
 fish -c "fisher add jethrokuan/z"
 
+
+#Step: Startup redshift for blue light filter
+#Ref:
+cp redshift-gtk.desktop ~/.config/autostart/
