@@ -64,6 +64,13 @@ runAsRoot chsh -s /usr/bin/fish
 echo "Installing Git"
 runAsRoot apt-get install git -y
 
+#Step: Install AntiMicro
+#Ref: http://linuxg.net/how-to-install-antimicro-on-ubuntu-18-10-and-ubuntu-18-04/
+echo "Installing AntiMicro"
+runAsRoot apt install gdebi
+wget https://launchpad.net/~mdeguzis/+archive/ubuntu/libregeek/+files/antimicro_2.23~artful-1_i386.deb
+runAsRoot sudo gdebi antimicro*.deb
+
 #Step: Install plank
 #Ref: https://www.reddit.com/r/linuxmint/comments/czfuyy/former_windowsuser_switched_to_linux_mint_never/
 #Ref: https://www.gnome-look.org/p/1275087/
