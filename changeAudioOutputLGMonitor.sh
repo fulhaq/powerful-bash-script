@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Device name variable
-devicename="alsa_output.pci-0000_0c_00.1.hdmi-stereo-extra1"
+devicename="alsa_output.pci-0000_0c_00.1.hdmi-stereo-extra2"
 
 #change the default sink
 pacmd "set-default-sink "$devicename""
